@@ -17,6 +17,9 @@
   </tbody>
 </table>
 
-<button type="button" class="btn btn-info" (click)="addPatient()">Ajouter un patient</button>
+<button class="btn btn-success mb-3" (click)="toggleCreateForm()">
+    {{ showCreateForm ? 'Annuler' : 'Créer un patient' }}
+  </button>
 
-<button type="button" class="btn btn-light" (click)="updatePatient()">Mettre à jour un patient</button>
+  <!-- Formulaire de création conditionnel -->
+  <app-add-subject *ngIf="showCreateForm" (patientCreated)="onPatientCreated($event)"></app-add-subject>

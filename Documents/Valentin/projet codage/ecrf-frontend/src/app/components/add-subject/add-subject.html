@@ -1,0 +1,25 @@
+<div class="card p-3 mb-3">
+  <h5>Créer un patient</h5>
+  <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+    <div class="mb-2">
+      <label>Code patient</label>
+      <input type="text" class="form-control" formControlName="subjectCode">
+    </div>
+
+    <div class="mb-2">
+      <label>Date de naissance</label>
+      <input type="date" class="form-control" formControlName="dateOfBirth">
+    </div>
+
+    <div class="mb-2">
+      <label>Sexe</label>
+      <select class="form-select" formControlName="sex">
+        <option value="">-- Choisir --</option>
+        <option value="M">Masculin</option>
+        <option value="F">Féminin</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="subjectForm.invalid">Créer</button>
+  </form>
+</div>
