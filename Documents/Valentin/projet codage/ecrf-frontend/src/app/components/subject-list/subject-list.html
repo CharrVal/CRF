@@ -1,0 +1,22 @@
+<h2>Liste des Subjects</h2>
+
+<table border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Date de naissance</th>
+      <th>Sexe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of subjects">
+      <td>{{ s.subjectCode }}</td>
+      <td>{{ s.dateOfBirth | date }}</td>
+      <td>{{ s.sex }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-info" (click)="addPatient()">Ajouter un patient</button>
+
+<button type="button" class="btn btn-light" (click)="updatePatient()">Mettre à jour un patient</button>
