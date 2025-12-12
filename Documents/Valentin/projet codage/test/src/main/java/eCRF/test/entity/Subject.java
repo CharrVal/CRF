@@ -13,7 +13,7 @@ import java.util.Date;
 public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idSubject")
+    @Column(name = "id")
     private Integer idSubject;
     private String subjectCode;
     @Column(name = "birth_date")

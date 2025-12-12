@@ -26,15 +26,15 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     @Override
-    public Subject updateSubject(Integer id, Subject newData) {
-        Subject existing = repository.findById(id)
+    public Subject updateSubject(Integer id, Subject subjectToUpdate) {
+        Subject existingSubject = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Subject not found"));
 
-        existing.setSubjectCode(newData.getSubjectCode());
-        existing.setDateOfBirth(newData.getDateOfBirth());
-        existing.setSex(newData.getSex());
+        existingSubject.setSubjectCode(subjectToUpdate.getSubjectCode());
+        existingSubject.setDateOfBirth(subjectToUpdate.getDateOfBirth());
+        existingSubject.setSex(subjectToUpdate.getSex());
 
-        return repository.save(existing);
+        return repository.save(existingSubject);
     }
 
     @Override
